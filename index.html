@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,14 +11,24 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
+
+<div class="bg-animation">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
 
 <header>
 
@@ -28,9 +40,9 @@ Ashish<span>Dev</span>
 
 </div>
 
-<ul class="nav-links">
+<ul>
 
-<li><a href="#">Home</a></li>
+<li><a href="#home">Home</a></li>
 
 <li><a href="#about">About</a></li>
 
@@ -44,34 +56,69 @@ Ashish<span>Dev</span>
 
 </ul>
 
-<a href="#contact" class="hire-btn">Hire Me</a>
+<a href="#contact" class="hire-btn">
+Hire Me
+</a>
 
 </nav>
 
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-left">
 
-<h3>Hello, I'm</h3>
+<p class="tag">
 
-<h1>Ashish Vankar</h1>
-
-<h2>Frontend Web Developer</h2>
-
-<p>
-
-I create beautiful, responsive and modern websites
-using HTML, CSS and JavaScript.
+👋 Welcome To My Portfolio
 
 </p>
 
-<div class="hero-buttons">
+<h1>
 
-<a href="#projects" class="btn1">View Work</a>
+Hi,
 
-<a href="#contact" class="btn2">Contact Me</a>
+I'm
+
+<span>
+
+Ashish Vankar
+
+</span>
+
+</h1>
+
+<h2 class="typing">
+
+Frontend Web Developer
+
+</h2>
+
+<p>
+
+I create beautiful responsive websites
+
+using HTML, CSS and JavaScript.
+
+I focus on clean UI, modern design
+
+and smooth user experience.
+
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn1">
+
+View Projects
+
+</a>
+
+<a href="#contact" class="btn2">
+
+Hire Me
+
+</a>
 
 </div>
 
@@ -83,19 +130,39 @@ using HTML, CSS and JavaScript.
 
 <a href="#"><i class="fab fa-instagram"></i></a>
 
+<a href="#"><i class="fab fa-facebook"></i></a>
+
 </div>
 
 </div>
 
 <div class="hero-right">
 
-<div class="profile-card">
+<div class="glass-card">
 
 <div class="circle"></div>
 
-<h2>Ashish</h2>
+<h2>
 
-<p>Frontend Developer</p>
+Ashish Vankar
+
+</h2>
+
+<p>
+
+Frontend Developer
+
+</p>
+
+<div class="skills-mini">
+
+<span>HTML</span>
+
+<span>CSS</span>
+
+<span>JavaScript</span>
+
+</div>
 
 </div>
 
@@ -105,69 +172,140 @@ using HTML, CSS and JavaScript.
 
 <section id="about">
 
-<h2 class="section-title">About Me</h2>
+<h2 class="section-title">
+
+About Me
+
+</h2>
 
 <p class="section-text">
 
-I'm passionate about creating beautiful,
-responsive and modern websites.
+Hello!
 
-Currently I'm improving my frontend skills
-and building professional web projects.
+I'm Ashish Vankar, a passionate Frontend Web Developer.
+
+I enjoy building responsive, fast and modern websites.
+
+Currently I'm learning advanced web development and
+working on real-world portfolio projects to improve my skills.
+
+My goal is to provide beautiful websites for businesses,
+startups and personal brands.
 
 </p>
 
 </section>
+<!-- ================= Services ================= -->
 
 <section id="services">
 
-<h2 class="section-title">
+    <h2 class="section-title">My Services</h2>
 
-Services
+    <div class="cards">
 
-</h2>
+        <div class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Website Development</h3>
+            <p>I build modern, responsive and fast websites using HTML, CSS and JavaScript.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>UI Design</h3>
+            <p>Clean, modern and attractive user interface designs for businesses and portfolios.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive Design</h3>
+            <p>Every website works perfectly on desktop, tablet and mobile devices.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= Skills ================= -->
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skill-container">
+
+<div class="skill">
+
+<p>HTML</p>
+
+<div class="bar">
+<div class="fill html">95%</div>
+</div>
+
+</div>
+
+<div class="skill">
+
+<p>CSS</p>
+
+<div class="bar">
+<div class="fill css">90%</div>
+</div>
+
+</div>
+
+<div class="skill">
+
+<p>JavaScript</p>
+
+<div class="bar">
+<div class="fill js">70%</div>
+</div>
+
+</div>
+
+<div class="skill">
+
+<p>Responsive Design</p>
+
+<div class="bar">
+<div class="fill responsive">95%</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Projects ================= -->
+
+<section id="projects">
+
+<h2 class="section-title">Featured Projects</h2>
 
 <div class="cards">
 
 <div class="card">
 
-<i class="fas fa-code"></i>
+<h3>Restaurant Website</h3>
 
-<h3>Website Development</h3>
-
-<p>
-
-Modern Responsive Websites
-
-</p>
+<p>Modern restaurant landing page with premium design.</p>
 
 </div>
 
 <div class="card">
 
-<i class="fas fa-laptop-code"></i>
+<h3>Gym Website</h3>
 
-<h3>Landing Pages</h3>
-
-<p>
-
-Business Landing Pages
-
-</p>
+<p>Fitness website with responsive layout and animations.</p>
 
 </div>
 
 <div class="card">
 
-<i class="fas fa-mobile-alt"></i>
+<h3>Business Website</h3>
 
-<h3>Responsive Design</h3>
-
-<p>
-
-Mobile Friendly Websites
-
-</p>
+<p>Professional business landing page for startups.</p>
 
 </div>
 
@@ -175,7 +313,66 @@ Mobile Friendly Websites
 
 </section>
 
+<!-- ================= Contact ================= -->
+
+<section id="contact">
+
+<h2 class="section-title">
+
+Contact Me
+
+</h2>
+
+<div class="contact-box">
+
+<p>
+
+<i class="fas fa-envelope"></i>
+
+Email :
+
+your@email.com
+
+</p>
+
+<p>
+
+<i class="fab fa-github"></i>
+
+GitHub :
+
+github.com/ashishdev-web
+
+</p>
+
+<p>
+
+<i class="fab fa-linkedin"></i>
+
+LinkedIn :
+
+Coming Soon
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= Footer ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Ashish Vankar | All Rights Reserved
+
+</p>
+
+</footer>
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
