@@ -189,3 +189,32 @@ card.style.background="rgba(255,255,255,.06)";
 });
 
 console.log("Portfolio Loaded Successfully");
+tsParticles.load("particles-js",{
+background:{
+color:"#050816"
+},
+fpsLimit:60,
+particles:{
+number:{
+value:80
+},
+color:{
+value:"#38bdf8"
+},
+links:{
+enable:true,
+color:"#38bdf8",
+distance:150
+},
+move:{
+enable:true,
+speed:2
+},
+opacity:{
+value:.4
+},
+size:{
+value:3
+}
+}
+});
