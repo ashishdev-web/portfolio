@@ -218,3 +218,36 @@ value:3
 }
 }
 });
+// Counter Animation
+
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.getAttribute("data-target");
+
+const count=+counter.innerText;
+
+const speed=100;
+
+const inc=Math.ceil(target/speed);
+
+if(count<target){
+
+counter.innerText=count+inc;
+
+setTimeout(update,30);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+}
+
+update();
+
+});
