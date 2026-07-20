@@ -1,149 +1,191 @@
 // =============================
-// Portfolio Pro v2 JavaScript
-// =============================
-
-// Navbar Shadow on Scroll
-
-window.addEventListener("scroll", function () {
-
-    const header = document.querySelector("header");
-
-    if (window.scrollY > 50) {
-        header.style.background = "rgba(5,8,22,.95)";
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.4)";
-    } else {
-        header.style.background = "rgba(255,255,255,.05)";
-        header.style.boxShadow = "none";
-    }
-
-});
-
-// =============================
 // Smooth Scroll
 // =============================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
+    anchor.addEventListener("click", function(e) {
         e.preventDefault();
 
         document.querySelector(this.getAttribute("href")).scrollIntoView({
-
             behavior: "smooth"
-
         });
-
     });
+});
+
+// =============================
+// Navbar Background
+// =============================
+
+window.addEventListener("scroll", () => {
+
+    const header = document.querySelector("header");
+
+    if(window.scrollY > 80){
+
+        header.style.background="rgba(5,8,22,.95)";
+        header.style.boxShadow="0 10px 25px rgba(0,0,0,.4)";
+
+    }else{
+
+        header.style.background="rgba(0,0,0,.25)";
+        header.style.boxShadow="none";
+
+    }
 
 });
 
 // =============================
-// Hero Typing Animation
+// Typing Animation
 // =============================
 
-const text = [
-    "Frontend Developer",
-    "Responsive Website Designer",
-    "HTML & CSS Expert",
-    "Portfolio Website Creator"
+const words=[
+"Frontend Developer",
+"Website Designer",
+"HTML & CSS Expert",
+"Responsive Web Designer"
 ];
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+let wordIndex=0;
+let charIndex=0;
+let typing=true;
 
-(function type() {
+const typingElement=document.querySelector(".typing");
 
-    if (count === text.length) {
-        count = 0;
-    }
+function typeEffect(){
 
-    currentText = text[count];
+if(!typingElement) return;
 
-    letter = currentText.slice(0, ++index);
+let currentWord=words[wordIndex];
 
-    const heading = document.querySelector(".hero-left h2");
+if(typing){
 
-    if (heading) {
-        heading.textContent = letter;
-    }
+typingElement.textContent=currentWord.substring(0,charIndex++);
 
-    if (letter.length === currentText.length) {
+if(charIndex>currentWord.length){
 
-        setTimeout(() => {
+typing=false;
 
-            index = 0;
-            count++;
+setTimeout(typeEffect,1500);
 
-            setTimeout(type, 300);
+return;
 
-        }, 1500);
+}
 
-    } else {
+}else{
 
-        setTimeout(type, 80);
+typingElement.textContent=currentWord.substring(0,charIndex--);
 
-    }
+if(charIndex<0){
 
-})();
+typing=true;
+
+wordIndex++;
+
+if(wordIndex>=words.length){
+
+wordIndex=0;
+
+}
+
+}
+
+}
+
+setTimeout(typeEffect,typing?120:60);
+
+}
+
+typeEffect();
 
 // =============================
-// Card Hover Animation
+// Reveal Animation
 // =============================
 
-const cards = document.querySelectorAll(".card");
+const observer=new IntersectionObserver((entries)=>{
 
-cards.forEach(card => {
+entries.forEach(entry=>{
 
-    card.addEventListener("mouseenter", () => {
+if(entry.isIntersecting){
 
-        card.style.transform = "translateY(-12px) scale(1.03)";
+entry.target.classList.add("show");
 
-    });
+}
 
-    card.addEventListener("mouseleave", () => {
+});
 
-        card.style.transform = "translateY(0) scale(1)";
+});
 
-    });
+document.querySelectorAll("section").forEach((section)=>{
+
+section.classList.add("hidden");
+
+observer.observe(section);
 
 });
 
 // =============================
-// Reveal on Scroll
+// Active Menu
 // =============================
 
-const observer = new IntersectionObserver(entries => {
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".navbar ul li a");
 
-    entries.forEach(entry => {
+window.addEventListener("scroll",()=>{
 
-        if (entry.isIntersecting) {
+let current="";
 
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0px)";
+sections.forEach(section=>{
 
-        }
+const sectionTop=section.offsetTop-120;
 
-    });
+if(pageYOffset>=sectionTop){
 
-}, {
-    threshold: 0.2
-});
+current=section.getAttribute("id");
 
-document.querySelectorAll("section").forEach(sec => {
-
-    sec.style.opacity = "0";
-    sec.style.transform = "translateY(50px)";
-    sec.style.transition = ".8s";
-
-    observer.observe(sec);
+}
 
 });
 
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")=="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
 // =============================
-// Console Message
+// Card Hover
 // =============================
 
-console.log("🔥 Ashish Portfolio Pro Loaded Successfully");
+document.querySelectorAll(".card").forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
+
+card.style.background=
+`radial-gradient(circle at ${x}px ${y}px,
+rgba(56,189,248,.25),
+rgba(255,255,255,.05))`;
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.background="rgba(255,255,255,.06)";
+
+});
+
+});
+
+console.log("Portfolio Loaded Successfully");
